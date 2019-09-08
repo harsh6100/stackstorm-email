@@ -25,12 +25,12 @@ DEFAULT_ATTACHMENT_DATASTORE_TTL = 1800
 
 
 class IMAPSensor(PollingSensor):
-    def __init__(self, sensor_service, config=None, poll_interval=30):
+    def __init__(self, sensor_service, config=None, poll_interval=5):
         super(IMAPSensor, self).__init__(sensor_service=sensor_service,
                                          config=config,
                                          poll_interval=poll_interval)
 
-        self._trigger = 'email.imap.message'
+        self._trigger = 'email123.imap.message'
         self._logger = self._sensor_service.get_logger(__name__)
 
         self._max_attachment_size = self._config.get('max_attachment_size',
